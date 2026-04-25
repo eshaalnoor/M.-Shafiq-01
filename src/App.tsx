@@ -79,24 +79,24 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen font-sans bg-bg-dark text-gray-300">
+    <div className="min-h-screen font-sans bg-slate-950 text-slate-100">
       <div className="fixed inset-0 pointer-events-none bg-grid-white opacity-20 z-0" />
       
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-bg-dark/80 backdrop-blur-md py-4 border-b border-white/5" : "py-8"}`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-slate-950/80 backdrop-blur-xl py-4 border-b border-white/5" : "py-8"}`}>
+        <div className="max-w-7xl mx-auto px-10 flex justify-between items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-display font-bold tracking-tighter text-white flex items-center gap-2"
+            className="text-lg font-medium tracking-tight text-white flex items-center gap-3"
           >
-            <div className="w-8 h-8 rounded-lg bg-brand-primary flex items-center justify-center">
-              <span className="text-bg-dark">S</span>
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-rose-600 flex items-center justify-center font-bold text-white shadow-lg shadow-amber-500/20">
+              S
             </div>
-            SHAFIQ
+            MUHAMMAD SHAFIQ
           </motion.div>
           
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-8 text-sm font-medium text-slate-400">
             {NAV_LINKS.map((link, i) => (
               <motion.a 
                 key={link.name}
@@ -104,7 +104,7 @@ export default function App() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="text-sm font-medium hover:text-brand-primary transition-colors uppercase tracking-widest"
+                className="hover:text-white transition-colors"
               >
                 {link.name}
               </motion.a>
@@ -114,78 +114,121 @@ export default function App() {
           <motion.button 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="px-6 py-2 rounded-full border border-white/10 hover:border-brand-primary transition-all text-sm font-medium hover:text-brand-primary"
+            className="px-5 py-2 bg-white text-slate-950 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-amber-50 transition-all"
           >
-            Work with me
+            Collaborate
           </motion.button>
         </div>
       </nav>
 
       <main className="relative z-10 pt-20">
         {/* Hero Section */}
-        <section className="min-h-[85vh] flex items-center px-6 overflow-hidden">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <section className="min-h-[90vh] flex items-center px-10">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
             <motion.div 
+              className="lg:col-span-7"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-xs font-semibold text-brand-primary mb-6 uppercase tracking-widest">
-                <Zap className="w-3 h-3" /> AI Educator & Innovator
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-6">
+                Founder & AI Educator
               </div>
-              <h1 className="text-6xl md:text-8xl font-display font-bold leading-[0.9] mb-8">
-                Empowering <br />
-                <span className="text-brand-primary text-glow">The Future</span> <br />
-                through AI.
+              <h1 className="text-6xl md:text-8xl font-bold leading-[1.1] tracking-tight bg-gradient-to-b from-white to-slate-500 bg-clip-text text-transparent mb-8">
+                Pioneering AI for the <br />
+                <span className="text-white">next billion.</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-400 max-w-lg mb-10 leading-relaxed font-light">
+              <p className="text-base text-slate-400 max-w-lg mb-10 leading-relaxed font-light">
                 Founder-level architectural work in Urdu AI ecosystems and rural innovation. 
                 Bridging communities through accessible technology and social impact.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-4 rounded-full bg-brand-primary text-bg-dark font-bold hover:scale-105 transition-transform flex items-center gap-2">
+                <button className="px-8 py-3 rounded-xl bg-slate-100 text-slate-950 font-bold hover:bg-white active:scale-[0.98] transition-all flex items-center gap-2">
                   View Projects <ArrowUpRight className="w-5 h-5" />
                 </button>
-                <button className="px-8 py-4 rounded-full glass-card font-bold hover:bg-white/10 transition-colors">
-                  Read My Vision
+                <button className="px-8 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-colors">
+                  Our Vision
                 </button>
+              </div>
+
+              <div className="flex space-x-6 pt-12">
+                <div>
+                  <div className="text-3xl font-bold">50K+</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-wide font-bold">Students Taught</div>
+                </div>
+                <div className="w-[1px] bg-white/10 h-10 self-center" />
+                <div>
+                  <div className="text-3xl font-bold">12+</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-wide font-bold">Open Models</div>
+                </div>
               </div>
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="relative hidden lg:block"
+              className="lg:col-span-5 relative hidden lg:block"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden aspect-square glass-card p-2">
+              <div className="relative z-10 rounded-[2.5rem] overflow-hidden aspect-[4/5] bg-white/5 border border-white/10 p-3">
                 <img 
-                  src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200" 
-                  alt="AI and Technology Concept" 
-                  className="w-full h-full object-cover rounded-xl"
+                  src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Muhammad Shafiq AI Innovation" 
+                  className="w-full h-full object-cover rounded-[2rem]"
                 />
               </div>
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-brand-primary/20 blur-[100px] rounded-full" />
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-brand-secondary/20 blur-[100px] rounded-full" />
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-amber-500/10 blur-[100px] rounded-full" />
+              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-rose-500/10 blur-[100px] rounded-full" />
             </motion.div>
           </div>
         </section>
 
-        {/* Impact Section */}
-        <section className="py-24 px-6 border-y border-white/5 bg-white/[0.02]">
+        {/* Initiatives Section */}
+        <section id="initiatives" className="py-32 px-10 bg-white/[0.01]">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {IMPACT_STATS.map((stat, i) => (
+            <div className="flex items-center justify-between mb-20">
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Active Initiatives</h2>
+              <div className="h-[1px] flex-1 mx-8 bg-white/10"></div>
+              <button className="text-slate-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
+                All Work <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                { 
+                  title: "Urdu GPT Framework", 
+                  type: "NLP Research", 
+                  desc: "The first localized large language model optimized for regional nuances and socio-cultural context in Pakistan.",
+                  color: "border-amber-500/50"
+                },
+                { 
+                  title: "Rural Innovation Hub", 
+                  type: "AgriTech", 
+                  desc: "Establishing physical tech nodes in underserved villages to provide satellite internet and AI-assisted tools.",
+                  color: "border-rose-500/50"
+                }
+              ].map((item, i) => (
                 <motion.div 
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="text-center"
+                  className={`group relative bg-white/5 border border-white/10 rounded-[2rem] p-10 overflow-hidden hover:${item.color} transition-all`}
                 >
-                  <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-xs uppercase tracking-widest text-gray-500 font-semibold">{stat.label}</div>
+                  <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <Rocket className="w-32 h-32" />
+                  </div>
+                  <div className="relative z-10">
+                    <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-4">{item.type}</div>
+                    <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
+                    <p className="text-slate-400 font-light text-lg leading-relaxed mb-8 max-w-lg">{item.desc}</p>
+                    <div className="flex gap-2">
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-[10px] text-slate-300 font-medium">Core Strategy</span>
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-[10px] text-slate-300 font-medium">Community Impact</span>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -193,7 +236,7 @@ export default function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-32 px-6">
+        <section id="about" className="py-32 px-10">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
               initial={{ opacity: 0 }}
@@ -202,18 +245,18 @@ export default function App() {
               className="grid grid-cols-2 gap-4"
             >
               <div className="space-y-4 pt-12">
-                <div className="aspect-[3/4] rounded-2xl glass-card overflow-hidden">
+                <div className="aspect-[3/4] rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800" alt="Innovation" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                 </div>
-                <div className="aspect-square rounded-2xl glass-card overflow-hidden bg-brand-primary/10 flex items-center justify-center p-8">
-                  <Brain className="w-full h-full text-brand-primary opacity-50" />
+                <div className="aspect-square rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-8">
+                  <Brain className="w-full h-full text-amber-500 opacity-50" />
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="aspect-square rounded-2xl glass-card overflow-hidden bg-brand-secondary/10 flex items-center justify-center p-8">
-                  <Users className="w-full h-full text-brand-secondary opacity-50" />
+                <div className="aspect-square rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-8">
+                  <Users className="w-full h-full text-rose-500 opacity-50" />
                 </div>
-                <div className="aspect-[3/4] rounded-2xl glass-card overflow-hidden">
+                <div className="aspect-[3/4] rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800" alt="Community" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                 </div>
               </div>
@@ -225,11 +268,11 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="text-brand-primary uppercase tracking-[0.2em] font-bold text-sm mb-6">Background</h4>
-              <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">
+              <h4 className="text-slate-500 uppercase tracking-[0.2em] font-bold text-xs mb-6">Background</h4>
+              <h2 className="text-4xl lg:text-6xl font-bold mb-8 leading-tight">
                 Architecting Social Change through <span className="text-white">Digital Literacy.</span>
               </h2>
-              <div className="space-y-6 text-gray-400 text-lg font-light leading-relaxed">
+              <div className="space-y-6 text-slate-400 text-lg font-light leading-relaxed">
                 <p>
                   As an AI Educator and Community Innovator, I specialize in translating complex technological paradigms 
                   into actionable human impact. My focus lies at the intersection of Urdu language processing and 
@@ -245,239 +288,113 @@ export default function App() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="py-32 px-6 bg-white/[0.01]">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        {/* Skills & About Section */}
+        <section id="skills" className="py-32 px-10">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-20">
+            <div className="lg:col-span-4 space-y-12">
               <div>
-                <h4 className="text-brand-primary uppercase tracking-[0.2em] font-bold text-sm mb-6">Work</h4>
-                <h2 className="text-4xl md:text-6xl font-display font-bold">Featured Projects</h2>
+                <h4 className="text-amber-500 uppercase tracking-[0.2em] font-bold text-xs mb-6">Expertise</h4>
+                <h2 className="text-4xl font-bold mb-8">Technical Competencies</h2>
+                <div className="space-y-8">
+                  {[
+                    { label: "AI Strategy", value: "100%", sub: "Expert" },
+                    { label: "Urdu NLP", value: "92%", sub: "Lead" },
+                    { label: "Digital Products", value: "85%", sub: "9 Years" }
+                  ].map((skill, i) => (
+                    <div key={skill.label}>
+                      <div className="flex justify-between text-sm mb-2 font-medium">
+                        <span className="text-slate-300">{skill.label}</span>
+                        <span className="text-slate-500">{skill.sub}</span>
+                      </div>
+                      <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+                        <motion.div 
+                          initial={{ width: 0 }}
+                          whileInView={{ width: skill.value }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1.5, delay: i * 0.2 }}
+                          className={`h-full ${i === 0 ? "bg-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.5)]" : i === 1 ? "bg-rose-500" : "bg-slate-400"}`}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <button className="text-brand-primary font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
-                Browse Full Catalog <ChevronRight className="w-5 h-5" />
-              </button>
+
+              <div className="p-8 bg-gradient-to-br from-amber-600 to-rose-700 rounded-3xl text-white">
+                <h3 className="text-xl font-bold mb-3">Latest Research</h3>
+                <p className="text-sm text-white/80 mb-6 font-light leading-relaxed">
+                  "Synthesizing Urdu Dialects for Generative Audio Models" - A study on LLM localized fine-tuning.
+                </p>
+                <a href="#" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider border-b border-white/30 pb-1 hover:border-white transition-all">
+                  Read Publication <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
               {PROJECTS.map((project, i) => (
                 <motion.div 
                   key={project.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="group"
+                  className="group bg-white/5 border border-white/10 rounded-[2rem] p-6 hover:border-white/20 transition-all flex flex-col"
                 >
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-white/5">
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6">
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <div className="flex gap-2">
-                        {project.tags.map(tag => (
-                          <span key={tag} className="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase tracking-wider text-white">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 group-hover:text-brand-primary transition-colors flex items-center justify-between">
-                    {project.title} <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all" />
-                  </h3>
-                  <p className="text-gray-400 font-light leading-relaxed mb-4">
-                    {project.description}
-                  </p>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">{project.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed flex-1">{project.description}</p>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Initiatives Section */}
-        <section id="initiatives" className="py-32 px-6 overflow-hidden">
-          <div className="max-w-7xl mx-auto">
-            <h4 className="text-brand-primary uppercase tracking-[0.2em] font-bold text-sm mb-6 text-center">Global Reach</h4>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-center mb-24">Strategic Initiatives</h2>
-            
-            <div className="space-y-4">
-              {[
-                { title: "Urdu AI localized Ecosystem", type: "Core Infrastructure", desc: "Building the first comprehensive AI library specifically optimized for the Urdu script." },
-                { title: "Rural Micro-Innovation Hubs", type: "Community Development", desc: "Transforming village centers into tech-learning nodes using sustainable hardware models." },
-                { title: "Public sector AI Advocacy", type: "Policy Support", desc: "Advising regional educational boards on the integration of LLMs in public curriculum." }
-              ].map((item, i) => (
-                <motion.div 
-                  key={item.title}
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.2 }}
-                  className="p-8 md:p-12 rounded-3xl glass-card flex flex-col md:flex-row gap-8 items-start md:items-center group hover:bg-white/[0.08] transition-all cursor-default"
-                >
-                  <div className="w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center shrink-0">
-                    <Rocket className="w-8 h-8 text-brand-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="text-xs uppercase tracking-widest text-brand-secondary font-bold mb-2">{item.type}</div>
-                    <h3 className="text-3xl font-display font-bold mb-4">{item.title}</h3>
-                    <p className="text-gray-400 font-light max-w-2xl">{item.desc}</p>
-                  </div>
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
-                      <ChevronRight className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills" className="py-32 px-6 bg-white/[0.01]">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-20">
-              <div className="lg:w-1/3">
-                <h4 className="text-brand-primary uppercase tracking-[0.2em] font-bold text-sm mb-6">Expertise</h4>
-                <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">Specialized Toolsets</h2>
-                <p className="text-lg text-gray-400 font-light leading-relaxed">
-                  A multi-disciplinary approach combining technical engineering with socio-digital strategy.
-                </p>
-              </div>
-              <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {SKILLS.map((set, i) => (
-                  <motion.div 
-                    key={set.category}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="p-8 rounded-2xl border border-white/5 bg-white/[0.03]"
-                  >
-                    <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
-                      <Code className="w-5 h-5 text-brand-primary" /> {set.category}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {set.items.map(skill => (
-                        <span key={skill} className="px-3 py-1 rounded-md bg-white/5 border border-white/5 text-xs text-gray-400">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-32 px-6">
-          <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden glass-card relative isolate">
-            <div className="absolute inset-0 bg-brand-primary/5 -z-10" />
-            <div className="grid lg:grid-cols-5 gap-0">
-              <div className="lg:col-span-2 p-12 lg:p-20 border-b lg:border-b-0 lg:border-r border-white/5">
-                <h4 className="text-brand-primary uppercase tracking-[0.2em] font-bold text-sm mb-6 text-glow">Contact</h4>
-                <h2 className="text-4xl md:text-5xl font-display font-bold mb-10 leading-tight">Let's build the <br />future together.</h2>
-                <div className="space-y-8">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-brand-primary" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500 uppercase tracking-widest mb-1">Email Me</div>
-                      <div className="text-lg font-medium text-white">hello@shafiqai.com</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
-                      <MessageSquare className="w-5 h-5 text-brand-primary" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500 uppercase tracking-widest mb-1">Social Chat</div>
-                      <div className="text-lg font-medium text-white">@shafiq_innovation</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-brand-primary" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500 uppercase tracking-widest mb-1">Current Base</div>
-                      <div className="text-lg font-medium text-white">Innovation Labs, Rural Hub</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-3 p-12 lg:p-20">
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-3">
-                      <label className="text-xs uppercase tracking-widest text-gray-500 font-bold ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/5 focus:border-brand-primary/50 focus:outline-none transition-colors" />
-                    </div>
-                    <div className="space-y-3">
-                      <label className="text-xs uppercase tracking-widest text-gray-500 font-bold ml-1">Email Address</label>
-                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/5 focus:border-brand-primary/50 focus:outline-none transition-colors" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-xs uppercase tracking-widest text-gray-500 font-bold ml-1">Project Interest</label>
-                    <select className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/5 focus:border-brand-primary/50 focus:outline-none transition-colors appearance-none text-gray-400 font-light">
-                      <option>AI Education Partnership</option>
-                      <option>Rural Tech Initiative</option>
-                      <option>Digital Product Design</option>
-                      <option>General Collaboration</option>
-                    </select>
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-xs uppercase tracking-widest text-gray-500 font-bold ml-1">Your Message</label>
-                    <textarea rows={5} placeholder="Tell me about your vision..." className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/5 focus:border-brand-primary/50 focus:outline-none transition-colors resize-none" />
-                  </div>
-                  <button className="w-full py-4 rounded-xl bg-brand-primary text-bg-dark font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 group">
-                    SendMessage <Rocket className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </button>
-                </form>
-              </div>
+        <section id="contact" className="py-32 px-10">
+          <div className="max-w-7xl mx-auto flex flex-col items-center">
+            <h4 className="text-slate-500 uppercase tracking-[0.2em] font-bold text-xs mb-6">Collaborate</h4>
+            <h2 className="text-5xl md:text-7xl font-bold text-center mb-16 tracking-tight">Let's build the <br />future together.</h2>
+            
+            <div className="w-full max-w-2xl bg-white/5 border border-white/10 rounded-[2.5rem] p-10 md:p-16 flex flex-col gap-6">
+              <input 
+                type="text" 
+                placeholder="Your Email" 
+                className="w-full bg-slate-900 border border-white/5 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-amber-500 transition-colors" 
+              />
+              <textarea 
+                placeholder="Inquiry Details" 
+                rows={4}
+                className="w-full bg-slate-900 border border-white/5 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-amber-500 transition-colors resize-none"
+              />
+              <button className="w-full py-4 bg-slate-100 text-slate-950 font-bold rounded-2xl text-sm hover:bg-white active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                Send Message <Rocket className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="py-20 px-6 border-t border-white/5 relative z-10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-          <div className="text-center md:text-left">
-            <div className="text-2xl font-display font-bold text-white mb-4">SHAFIQ</div>
-            <p className="text-sm text-gray-500 font-light max-w-sm">
-              Architecting the next generation of social innovation through localized digital empowerment.
-            </p>
-          </div>
-          
-          <div className="flex gap-10">
-            {NAV_LINKS.map(link => (
-              <a key={link.name} href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">{link.name}</a>
-            ))}
-          </div>
+      <footer className="px-10 py-12 border-t border-white/5 relative z-10 flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] text-slate-600 uppercase tracking-widest font-bold">
+        <div className="flex items-center gap-3">
+          <div className="w-6 h-6 rounded bg-white/5 flex items-center justify-center text-slate-500">S</div>
+          <span>Based in Punjab, Pakistan</span>
+        </div>
+        
+        <div className="flex space-x-10">
+          <a href="#" className="hover:text-slate-400 transition-colors">LinkedIn</a>
+          <a href="#" className="hover:text-slate-400 transition-colors">Twitter</a>
+          <a href="#" className="hover:text-slate-400 transition-colors">GitHub</a>
+        </div>
 
-          <div className="flex gap-4">
-            {[Github, Twitter, Linkedin].map((Icon, i) => (
-              <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-brand-primary hover:text-brand-primary transition-all">
-                <Icon className="w-5 h-5" />
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-bold">
-          <div>© {new Date().getFullYear()} MUHAMMAD SHAFIQ. ALL RIGHTS RESERVED.</div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Legal</a>
-          </div>
-        </div>
+        <span>© {new Date().getFullYear()} MUHAMMAD SHAFIQ</span>
       </footer>
     </div>
   );
